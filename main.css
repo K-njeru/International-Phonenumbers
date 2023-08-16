@@ -1,0 +1,654 @@
+ 
+
+      
+body {
+    background: #eff3f1;
+    font-family: 'Montserrat', sans-serif;
+    }
+    a {
+        color: black;
+        transition: .3s;
+    }
+    
+    a:hover,
+    a:active,
+    a:focus {
+        color: blue;
+        outline: none;
+        text-decoration: none;
+    }
+    
+    .btn:focus,
+    .form-control:focus {
+        box-shadow: none;
+    }
+    
+    .container-fluid {
+  max-width: 1366px;
+  
+ 
+    }
+    .badge-subhead {
+        background-color: blue;
+        color:  #ffffff;
+        margin-bottom: 8px;
+        padding: 10px 30px;
+        font-size: 14px;
+        border-radius: 40px;
+      }
+    .logo {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    h1 {
+      display: inline-block;
+      margin: 0;
+      font-size: 28px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+   
+    .btn {
+        padding: 12px 25px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: #ffffff;
+        background: blue;
+        border: 2px solid transparent;
+        border-radius: 0;
+        box-shadow: inset 0 0 0 50px blue;
+        transition: ease-out 0.3s;
+        -webkit-transition: ease-out 0.3s;
+        -moz-transition: ease-out 0.3s;
+    }
+    
+    .btn:hover {
+        color: blue;
+        background: transparent;
+        box-shadow: inset 0 0 0 0 blue;
+        border-color: blue;
+    }
+    
+    #loader {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: opacity .3s ease-out, visibility 0s linear .3s;
+        -o-transition: opacity .3s ease-out, visibility 0s linear .3s;
+        transition: opacity .3s ease-out, visibility 0s linear .3s;
+        z-index: 999;
+    }
+    
+#loader.show {
+    -webkit-transition: opacity .6s ease-out, visibility 0s linear 0s;
+    -o-transition: opacity .6s ease-out, visibility 0s linear 0s;
+    transition: opacity .6s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+#loader .loader {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border: 5px solid #dddddd;
+    border-top: 5px solid blue;
+    border-radius: 50%;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.back-to-top {
+    position: fixed;
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 8px 0;
+    text-align: center;
+    line-height: 1;
+    font-size: 22px;
+    right: 15px;
+    bottom: 15px;
+    z-index: 9;
+}
+
+.back-to-top i {
+    color: #ffffff;
+}
+
+.back-to-top:hover i {
+    color: #414141;
+}
+
+.user {
+    color: blue;
+    display: flex;
+    align-items: center;
+    }
+   
+/**********************************/
+/*********** Nav Bar CSS **********/
+/**********************************/
+.navbar {
+    position: relative;
+    transition: .5s;
+    z-index: 999;
+}
+
+.navbar.nav-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+}
+
+.navbar .navbar-brand {
+    margin: 0;
+    font-size: 45px;
+    line-height: 0px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: .5s;
+    
+}
+
+.navbar .navbar-brand img {
+    max-width: 100%;
+    max-height: 40px;
+}
+
+.navbar .dropdown-menu {
+    margin-top: 0;
+    border: 0;
+    border-radius: 0;
+    background: #f8f9fa;
+}
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='%23FFFFFF' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    
+}
+@media (min-width: 992px) {
+    .navbar {
+        position: absolute;
+        width: 100%;
+        padding: 30px 60px;
+        background: transparent !important;
+        border-bottom: 1px dashed rgba(256, 256, 256, .2);
+        z-index: 9;
+    }
+    
+    .navbar.nav-sticky {
+        padding: 10px 60px;
+        background: #030d38 !important;
+    }
+    
+    .navbar .navbar-brand {
+        color: #ffffff;
+    }
+    
+    .navbar.nav-sticky .navbar-brand {
+        color: blue;
+    }
+
+    .navbar-light .navbar-nav .nav-link,
+    .navbar-light .navbar-nav .nav-link:focus {
+        padding: 10px 10px 8px 10px;
+        color: blue;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+    .navbar-light.nav-sticky .navbar-nav .nav-link,
+    .navbar-light.nav-sticky .navbar-nav .nav-link:focus {
+        color: white;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-nav .nav-link.active {
+        color: white;
+    }
+    
+    .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
+    .navbar-light.nav-sticky .navbar-nav .nav-link.active {
+        color: blue;
+    }
+}
+
+@media (max-width: 991.98px) {   
+    .navbar {
+        padding: 15px;
+         background:    #030d38  !important;
+    }
+    
+    .navbar .navbar-brand {
+        color: white;
+        font-size: 20px;
+    }
+    
+    .navbar .navbar-nav {
+        margin-top: 15px;
+    }
+    
+    .navbar a.nav-link {
+        padding: 5px;
+        color: white !important;
+        }
+       .navbar .dropdown-menu {
+        box-shadow: none;
+    }
+}
+
+  
+
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #426aa6;
+    min-width: 163px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid blue;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid blue;
+  }
+  
+  .dropdown-content a:last-child {
+    border-bottom: none;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  
+  
+/*******************************/
+/********** Hero CSS ***********/
+/*******************************/
+.hero {
+    position: relative;
+    width: 100%;
+    margin-bottom: 45px;
+    padding: 120px 0 0 0;
+    overflow: hidden;
+    
+    background: linear-gradient(rgb(1 245 245 / 87%) , rgb(16 9 24 / 95%)), url(../img/man.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero .container-fluid {
+    padding: 0;
+}
+
+
+
+.hero .hero-content {
+    position: relative;
+    padding-left: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.hero .hero-text .parag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.hero .hero-text p {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.hero .hero-text h1 {
+    color: #111111;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero .hero-text h2 {
+    display: inline-block;
+    margin: 0;
+    height: 35px;
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+
+
+.hero-btn{
+    justify-content: center;
+    display: grid;
+}
+.hero .hero-btn .btn {
+    margin-bottom: 35px;
+    border-radius: 45px;
+    color: white;
+    background: blue;
+    
+}
+
+.hero .hero-btn .btn:hover {
+    color: #ffffff;
+    background: transparent;
+    box-shadow: inset 0 0 0 0 #ffffff;
+    border-color: #ffffff;
+}
+
+.hero .hero-btn .btn:first-child {
+    margin-right: 10px;
+}
+
+@media (max-width: 991.98px) {
+    .hero {
+        padding-top: 60px;
+    }
+    
+    .hero .hero-content {
+        padding: 0 15px;
+    }
+    
+    .hero .hero-text p {
+        font-size: 20px;
+    }
+    
+    .hero .hero-text h1 {
+        color: #111111;
+        font-size: 30px;
+    }
+    
+    .hero .hero-text h2 {
+        font-size: 25px;
+        height: 25px;
+    }
+    
+    .hero .hero-btn .btn {
+        padding: 12px 30px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
+    .hero,
+    .hero .hero-text,
+    .hero .hero-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero .hero-text p {
+        font-size: 18px;
+    }
+    
+    .hero .hero-text h1 {
+        font-size: 35px;
+    }
+    
+    .hero .hero-text h2 {
+        font-size: 22px;
+        height: 22px;
+    }
+    
+    .hero .hero-btn .btn {
+        padding: 10px 15px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero .hero-text p {
+        font-size: 16px;
+    }
+    
+    .hero .hero-text h1 {
+        font-size: 30px;
+    }
+    
+    .hero .hero-text h2 {
+        font-size: 18px;
+        height: 18px;
+    }
+    
+    .hero .hero-btn .btn {
+        padding: 8px 10px;
+        letter-spacing: 0;
+    }
+}
+
+/*******************************/
+/********** Footer CSS ***********/
+/*******************************/
+.footer-dark {
+    padding:50px 0;
+    color:rgb(246, 241, 241);
+    background-color:#030d38;
+    font-size: 20px;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .footer-dark h3 {
+    margin-top:0;
+    margin-bottom:12px;
+    font-weight:bold;
+    font-size:24px;
+    font-family: monospace;
+  }
+  
+  .footer-dark ul {
+    padding:0;
+    list-style:none;
+    line-height:1.6;
+    font-size:14px;
+    margin-bottom:0;
+  }
+  
+  .footer-dark ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.6;
+    font-size: 17px;
+  }
+  
+  .footer-dark ul a:hover {
+    opacity:0.8;
+  }
+  
+  @media (max-width:767px) {
+    .footer-dark .item:not(.social) {
+      text-align:center;
+      padding-bottom:20px;
+    }
+  }
+  
+  .footer-dark .item.text {
+    margin-bottom:36px;
+  }
+  
+  @media (max-width:767px) {
+    .footer-dark .item.text {
+      margin-bottom:0;
+    }
+  }
+  
+  .footer-dark .item.text p {
+    opacity:0.6;
+    font-size: 16px;
+    margin-bottom:0;
+  }
+  
+  .footer-dark .item.social {
+    text-align:center;
+  }
+  
+  @media (max-width:991px) {
+    .footer-dark .item.social {
+      text-align:center;
+      margin-top:20px;
+    }
+  }
+  
+  .footer-dark .item.social > a {
+    font-size:20px;
+    width:36px;
+    height:36px;
+    line-height:36px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+    margin:0 8px;
+    color:rgb(65, 240, 11);
+    opacity:0.75;
+  }
+  
+  .footer-dark .item.social > a:hover {
+    opacity:0.9;
+  }
+  
+  .footer-dark .copyright {
+    text-align:center;
+    padding-top:24px;
+    opacity:1.3;
+    font-size:26px;
+    margin-bottom:0;
+  }
+
+/*******************************/
+/********** about CSS ***********/
+/*******************************/  
+  .custom-container {
+    margin: 20px auto;
+    max-width: 80%;
+    position: relative;
+   
+   
+    padding: 20px;
+  }
+  .abthd {
+    display: flex;
+    justify-content: center;
+  }
+  .abthd .badge-subhead{ 
+    
+    margin-top: 30px;
+   
+  }
+  .abt p{
+    color: black;
+  }
+  .abt a{
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  @media (max-width: 992px) {
+    .custom-container {
+      max-width: 80%;
+    }
+  }
+  @media (max-width: 768px) {
+    .custom-container {
+      max-width: 90%;
+    }
+  }
+ .img .image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    object-fit: cover;
+  }
+  /*******************************/
+/********** contact CSS ***********/
+/*******************************/  
+  .contact-container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #e1ebf7;
+    margin-bottom: 20px;
+  }
+
+  .contact-info {
+    margin-top: 20px;
+  }
+  .contact-info p {
+    margin-bottom: 10px;
+  }
+ 
+.whatsapp-icon{
+position: fixed;
+display: none;
+width: 44px;
+height: 44px;
+padding: 8px 0;
+text-align: center;
+line-height: 1;
+font-size: 38px;
+right: 15px;
+bottom: 75px;
+z-index: 9;
+color: green;
+}
+.whatsapp-icon:hover{
+  color: rgb(5, 255, 113);
+}
+.m-pesa-btn{
+margin-top: 20px;
+background-color: white;
+display: flex;
+height: 60px;
+border: 1px solid blue;
+justify-content: center;
+align-items: center;
+}
+.m-pesa-btn:hover{
+  background-color: #414141;
+}
+
